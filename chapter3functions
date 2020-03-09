@@ -1,0 +1,80 @@
+/*
+Minimum Chapter 2 introduced the standard function Math.min, which returns its smallest argument (see “Return Values” on page 27). We can build something like that now. Write a function min that takes two arguments and returns their minimum.
+
+Haverbeke, Marijn. Eloquent JavaScript, 3rd Edition (p. 56). No Starch Press. Kindle Edition. 
+*/
+
+function min(a,b){
+if(a > b){
+return b;
+}else{
+return a;
+}
+}
+
+//======================================================================================
+/*
+Write a function countBs that takes a string as its only argument and returns a number that indicates how many uppercase “B” characters there are in the string.
+
+Haverbeke, Marijn. Eloquent JavaScript, 3rd Edition (p. 56). No Starch Press. Kindle Edition. 
+*/
+
+function countBs(string){
+bS = 0;
+for (char in string){
+if (string[char] === 'B'){
+bS += 1;
+}
+}
+return bS;
+}
+
+
+//======================================================================================
+/*
+
+*/
+
+function isEven(n) {
+  if (n == 0) return true;
+  else if (n == 1) return false;
+  else if (n < 0) return isEven(-n);
+  else return isEven(n - 2);
+  console.log(n);
+}
+
+console.log(isEven(50));
+// → true
+console.log(isEven(75));
+// → false
+console.log(isEven(9999));
+// → false
+//====================================================================================
+
+/*
+Expand on the function to count any character from a string.
+*/
+
+function countChar(string, character){
+count = 0;
+    for (char in string){
+        if(string[char] === character){
+	count += 1;
+	}
+	    
+    }
+return count;
+}
+
+alphabet = 'abcdefghijklmnopqrstuvwxyz';
+alphabetCount = {};
+for (char in alphabet){
+  if(alphabetCount[alphabet[char]] === undefined){
+  alphabetCount[alphabet[char]] = countChar('the quick brown fox jumps over the lazy dog.',alphabet[char]);
+  }else{
+    alphabetCount[alphabet[char]] += 1;
+  }
+  
+}
+console.log(alphabetCount);
+
