@@ -1,0 +1,23 @@
+function range(start, end, step){
+step = step || 1;
+range = [];
+if(start > end){
+  for(i = start; i >= end; i += step){
+  range.push(i);
+  }
+}else{
+  for(i = start; i <= end; i += step){
+  range.push(i);
+  }
+}
+  return range;
+  
+}
+
+function sum(array){
+  sum = 0;
+  for(num of array){
+    sum += num;
+  }
+  return sum;
+}
